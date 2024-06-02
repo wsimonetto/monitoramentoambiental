@@ -1,0 +1,66 @@
+Instruções Docker
+
+1º - Criação da Imagem (acessar prompt).
+
+prompt:
+
+docker build -t monitoramentoambiental:spring-docker .
+
+2º - Verificar se a imagem esta disponível.
+
+prompt:
+
+docker image ls
+
+2º - Inicialziar o container.
+
+prompt:
+
+docker container run -d -p 8080:8080 --name monitoramentoambiental monitoramentoambiental:spring-docker
+
+3º - Parar o container
+
+prompt:
+
+docker container stop monitoramentoambiental
+
+
+Instruções Insomnia
+
+1º - Deverá cadastrar um usuário;
+
+2º - Realizar o login com esse usuário para obter o token, que deverá ser atualizado/substituido/adicionado no Bearer de autenticidade do Insomnia, 
+para realizar as operações de teste.
+
+3º Importante ter apenas seis cadastros de sensores
+
+Sensor são fixos, devendo cada Parque ter seus 3 sensores
+
+tipoSensor                | localizacao
+
+Sensor de Qualidade do Ar | Parque Ibirapuera para localização
+Sensor de Umidade do Solo | Parque Ibirapuera para localização
+Sensor de Temperatura     | Parque Ibirapuera para localização
+	
+Sensor de Qualidade do Ar | Parque Villa-Lobos para localização
+Sensor de Umidade do Solo | Parque Villa-Lobos para localização
+Sensor de Temperatura     | Parque Villa-Lobos para localização
+	
+4º Cadastro de Alertas
+
+tipoAlerta                | descricao
+
+Alerta de Qualidade do Ar | Poluição do ar acima do limite recomendado no Parque Ibirapuera
+Alerta de Umidade do Solo | Umidade do solo abaixo do limite recomendado no Parque Ibirapuera
+Alerta de Temperatura     | Temperatura elevada detectada no Parque Ibirapuera
+
+Alerta de Qualidade do Ar | Poluição do ar acima do limite recomendado no Villa-Lobos
+Alerta de Umidade do Solo | Umidade do solo abaixo do limite recomendado no Villa-Lobos
+Alerta de Temperatura     | Temperatura elevada detectada no Villa-Lobos
+
+5º Cadastro Previsão de Chuva
+
+previsao
+
+Com Chuva
+Sem Chuva
